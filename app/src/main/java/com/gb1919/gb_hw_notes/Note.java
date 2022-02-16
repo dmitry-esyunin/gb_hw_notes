@@ -1,12 +1,14 @@
 package com.gb1919.gb_hw_notes;
 
-public class Note {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+public class Note implements Parcelable {
 
     private String name;
     private String text;
     private long timestamp;
     private long index;
-    private long fragment_id;
 
 
     public Note(String name, String text, long timestamp) {
@@ -28,7 +30,20 @@ public class Note {
         this.timestamp = timestamp;
     }
 
+    public String getName() {
+        return this.name;
+    }
+    public String getText() {
+        return this.text;
+    }
 
+    @Override
+    public int describeContents() {
+        return 0;
+    }
 
+    @Override
+    public void writeToParcel(Parcel parcel, int i) {
 
+    }
 }

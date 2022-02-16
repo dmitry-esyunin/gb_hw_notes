@@ -4,9 +4,12 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/Dmitry/Documents/__MyLearn/GB/Android/gb_hw_notes/app/src/main/res/drawable/ic_launcher_background.xml" value="0.13703703703703704" />
+        <entry key="..\:/Users/Dmitry/Documents/__MyLearn/GB/Android/gb_hw_notes/app/src/main/res/layout-land/activity_main.xml" value="0.20208333333333334" />
         <entry key="..\:/Users/Dmitry/Documents/__MyLearn/GB/Android/gb_hw_notes/app/src/main/res/layout-land/fragment_notes.xml" value="0.20208333333333334" />
         <entry key="..\:/Users/Dmitry/Documents/__MyLearn/GB/Android/gb_hw_notes/app/src/main/res/layout/activity_main.xml" value="0.175" />
+        <entry key="..\:/Users/Dmitry/Documents/__MyLearn/GB/Android/gb_hw_notes/app/src/main/res/layout/fragment_note_content.xml" value="0.175" />
         <entry key="..\:/Users/Dmitry/Documents/__MyLearn/GB/Android/gb_hw_notes/app/src/main/res/layout/fragment_notes.xml" value="0.18020833333333333" />
+        <entry key="..\:/Users/Dmitry/Documents/__MyLearn/GB/Android/gb_hw_notes/app/src/main/res/layout/fragment_notes_list.xml" value="0.175" />
       </map>
     </option>
   </component>

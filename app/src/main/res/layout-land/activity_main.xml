@@ -10,14 +10,12 @@
         android:id="@+id/notes_list"
         android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:background="@color/teal_700" />
+        android:layout_weight="1" />
 
     <FrameLayout
-        android:id="@+id/note"
+        android:id="@+id/note_content"
         android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:background="@color/purple_700" />
+        android:layout_weight="1" />
 
 </LinearLayout>
