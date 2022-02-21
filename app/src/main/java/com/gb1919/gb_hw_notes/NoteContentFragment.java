@@ -1,5 +1,6 @@
 package com.gb1919.gb_hw_notes;
 
+import android.content.res.Configuration;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -10,6 +11,7 @@ import android.os.Parcelable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 /**
@@ -58,5 +60,15 @@ public class NoteContentFragment extends Fragment {
         note = getArguments().getParcelable(KEY_NOTE);
         TextView tv = view.findViewById(R.id.text_content);
         tv.setText(note.getText());
+
+        Button button_back = view.findViewById(R.id.back_button_content);
+        boolean is_landscape = getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE;
+        if (is_landscape) {
+            button_back.setVisibility(View.GONE);
+        } else {
+            button_back.setOnClickListener( (View v) -> {requireActivity().getSupportFragmentManager().popBackStack();});
+        }
+
+
     }
 }

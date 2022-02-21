@@ -8,7 +8,7 @@ public class Note implements Parcelable {
     private String name;
     private String text;
     private long timestamp;
-    private long index;
+
 
 
     public Note(String name, String text, long timestamp) {
@@ -17,6 +17,24 @@ public class Note implements Parcelable {
         this.timestamp = timestamp;
     }
 
+
+    protected Note(Parcel in) {
+        name = in.readString();
+        text = in.readString();
+        timestamp = in.readLong();
+    }
+
+    public static final Creator<Note> CREATOR = new Creator<Note>() {
+        @Override
+        public Note createFromParcel(Parcel in) {
+            return new Note(in);
+        }
+
+        @Override
+        public Note[] newArray(int size) {
+            return new Note[size];
+        }
+    };
 
     public void setName(String name) {
         this.name = name;
@@ -44,6 +62,9 @@ public class Note implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel parcel, int i) {
-
+        parcel.writeString(name);
+        parcel.writeString(text);
+        parcel.writeLong(timestamp);
     }
+
 }
