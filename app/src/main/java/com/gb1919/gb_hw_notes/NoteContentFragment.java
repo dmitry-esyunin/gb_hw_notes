@@ -9,10 +9,14 @@ import androidx.fragment.app.Fragment;
 
 import android.os.Parcelable;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -57,6 +61,8 @@ public class NoteContentFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        setHasOptionsMenu(true);
+
         note = getArguments().getParcelable(KEY_NOTE);
         TextView tv = view.findViewById(R.id.text_content);
         tv.setText(note.getText());
@@ -68,7 +74,24 @@ public class NoteContentFragment extends Fragment {
         } else {
             button_back.setOnClickListener( (View v) -> {requireActivity().getSupportFragmentManager().popBackStack();});
         }
+    }
 
 
+    @Override
+    public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
+        inflater.inflate(R.menu.menu_content, menu);
+        super.onCreateOptionsMenu(menu, inflater);
+    }
+
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()){
+            case (R.id.action_edit_content_note):
+                Toast.makeText(requireContext(), "Sorry, the Notes is read only yet", Toast.LENGTH_SHORT).show();
+                break;
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 }

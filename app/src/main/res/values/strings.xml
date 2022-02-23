@@ -1,6 +1,8 @@
 <resources>
-    <string name="app_name">gb_hw_notes</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="note_content_btn_back">назад</string>
+    <string name="app_name">Мои заметки</string>
+    <string name="note_content_btn_back">Назад</string>
+    <string name="about">Обо мне</string>
+    <string name="exit">Выйти из программы</string>
+    <string name="edit">Редактировать заметку</string>
+    <string name="close_content_note">Список заметок</string>
 </resources>
