@@ -101,6 +101,7 @@ public class NoteContentFragment extends Fragment {
     @Override
     public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
         inflater.inflate(R.menu.menu_content, menu);
+        menu.findItem(R.id.action_exit).setVisible(false);
         super.onCreateOptionsMenu(menu, inflater);
     }
 

@@ -1,14 +1,17 @@
 package com.gb1919.gb_hw_notes;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 
+import android.content.DialogInterface;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -37,7 +40,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu, menu);
-        menu.findItem(R.id.action_exit).setVisible(false); // бесявая кнопка, а-ту ее
         return super.onCreateOptionsMenu(menu);
     }
 
@@ -50,11 +52,30 @@ public class MainActivity extends AppCompatActivity {
                 getSupportFragmentManager().beginTransaction().replace(R.id.notes_list, aboutFragment).addToBackStack("ABOUT").commit();
                 break;
             case (R.id.action_exit):
-                finish();
+                ShowAlertDialog();
                 break;
 
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    void ShowAlertDialog() {
+        new AlertDialog.Builder(this)
+                .setTitle(" ")
+                .setMessage("Закрыть приложение?")
+                .setNeutralButton("Нет", null)
+                .setPositiveButton("Да", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        showLastToast();
+                        finish();
+                    }
+                })
+                .show();
+
+    }
+
+    private void showLastToast() {
+        Toast.makeText(this, "See you", Toast.LENGTH_SHORT).show();
     }
 }
