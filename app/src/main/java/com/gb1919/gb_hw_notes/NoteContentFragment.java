@@ -27,7 +27,6 @@ import android.widget.Toast;
  */
 public class NoteContentFragment extends Fragment {
 
-
     public static final String KEY_NOTE = "KEY_NOTE";
 
     private Note note;
@@ -62,7 +61,8 @@ public class NoteContentFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        setHasOptionsMenu(true);
+        boolean is_landscape = getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE;
+        setHasOptionsMenu(!is_landscape);
 
         note = getArguments().getParcelable(KEY_NOTE);
         TextView tv = view.findViewById(R.id.text_content);
@@ -86,22 +86,23 @@ public class NoteContentFragment extends Fragment {
             return false;
         });
 
-        Button button_back = view.findViewById(R.id.back_button_content);
-        boolean is_landscape = getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE;
-        if (is_landscape) {
-            button_back.setVisibility(View.GONE);
-        } else {
-            button_back.setOnClickListener((View v) -> {
-                requireActivity().getSupportFragmentManager().popBackStack();
-            });
-        }
+//        Button button_back = view.findViewById(R.id.back_button_content);
+//        if (is_landscape) {
+//            button_back.setVisibility(View.GONE);
+//        } else {
+//            button_back.setOnClickListener((View v) -> {
+//                requireActivity().getSupportFragmentManager().popBackStack();
+//            });
+//        }
     }
 
 
     @Override
     public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
-        inflater.inflate(R.menu.menu_content, menu);
-        menu.findItem(R.id.action_exit).setVisible(false);
+        if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) {
+            inflater.inflate(R.menu.menu_content, menu);
+            menu.findItem(R.id.action_exit).setVisible(false);
+        }
         super.onCreateOptionsMenu(menu, inflater);
     }
 

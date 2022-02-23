@@ -19,12 +19,12 @@
             android:textSize="@dimen/note_content_textsize" />
 
 
-        <Button
-            android:id="@+id/back_button_content"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
-            android:text="@string/note_content_btn_back" />
+<!--        <Button-->
+<!--            android:id="@+id/back_button_content"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_gravity="bottom"-->
+<!--            android:text="@string/note_content_btn_back" />-->
     </FrameLayout>
 </ScrollView>
 

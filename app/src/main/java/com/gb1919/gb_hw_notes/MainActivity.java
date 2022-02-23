@@ -40,6 +40,14 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu, menu);
+        // Костыли. если вижу, что в мню основной активити лезут кнопки контента заметок -прячу их,
+        // а кнопку закрытия приложения отображаю
+        if (menu.findItem(R.id.action_edit_content_note) != null) {
+            menu.findItem(R.id.action_edit_content_note).setVisible(false);
+            menu.findItem(R.id.action_close_content_note).setVisible(false);
+            menu.findItem(R.id.action_exit).setVisible(true);
+        }
+
         return super.onCreateOptionsMenu(menu);
     }
 
