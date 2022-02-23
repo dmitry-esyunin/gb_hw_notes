@@ -90,6 +90,9 @@ public class NoteContentFragment extends Fragment {
             case (R.id.action_edit_content_note):
                 Toast.makeText(requireContext(), "Sorry, the Notes is read only yet", Toast.LENGTH_SHORT).show();
                 break;
+            case (R.id.action_close_content_note):
+                requireActivity().getSupportFragmentManager().popBackStack();
+                break;
         }
 
         return super.onOptionsItemSelected(item);

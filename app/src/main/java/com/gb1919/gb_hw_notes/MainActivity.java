@@ -2,6 +2,7 @@ package com.gb1919.gb_hw_notes;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.annotation.SuppressLint;
 import android.content.res.Configuration;
@@ -29,6 +30,8 @@ public class MainActivity extends AppCompatActivity {
                 getSupportFragmentManager().beginTransaction().replace(R.id.note_content, note_content).commit();
             }
         }
+        Toolbar toolbar = findViewById(R.id.main_toolbar);
+        setSupportActionBar(toolbar);
 
     }
 
@@ -44,7 +47,8 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
             case (R.id.action_about):
-                getSupportFragmentManager().beginTransaction().replace(R.id.notes_list, new AboutFragment()).commit();
+                AboutFragment aboutFragment = new AboutFragment();
+                getSupportFragmentManager().beginTransaction().replace(R.id.notes_list, aboutFragment).addToBackStack("ABOUT").commit();
                 break;
             case (R.id.action_exit):
                 finish();
