@@ -8,6 +8,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.os.Parcelable;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -15,6 +16,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.PopupMenu;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -48,7 +50,6 @@ public class NoteContentFragment extends Fragment {
         super.onCreate(savedInstanceState);
 
 
-
     }
 
     @Override
@@ -66,13 +67,33 @@ public class NoteContentFragment extends Fragment {
         note = getArguments().getParcelable(KEY_NOTE);
         TextView tv = view.findViewById(R.id.text_content);
         tv.setText(note.getText());
+        tv.setOnLongClickListener((View v) -> {
+            PopupMenu popupMenu = new PopupMenu(requireContext(), v);
+            requireActivity().getMenuInflater().inflate(R.menu.popup, popupMenu.getMenu());
+            popupMenu.show();
+            popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+                @Override
+                public boolean onMenuItemClick(MenuItem menuItem) {
+                    switch (menuItem.getItemId()) {
+                        case (R.id.action_popup_clear):
+                        case (R.id.action_popup_exit):
+                            Toast.makeText(requireContext(), "Sorry, is not functionally", Toast.LENGTH_SHORT).show();
+                            break;
+                    }
+                    return false;
+                }
+            });
+            return false;
+        });
 
         Button button_back = view.findViewById(R.id.back_button_content);
         boolean is_landscape = getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE;
         if (is_landscape) {
             button_back.setVisibility(View.GONE);
         } else {
-            button_back.setOnClickListener( (View v) -> {requireActivity().getSupportFragmentManager().popBackStack();});
+            button_back.setOnClickListener((View v) -> {
+                requireActivity().getSupportFragmentManager().popBackStack();
+            });
         }
     }
 
@@ -86,7 +107,7 @@ public class NoteContentFragment extends Fragment {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        switch (item.getItemId()){
+        switch (item.getItemId()) {
             case (R.id.action_edit_content_note):
                 Toast.makeText(requireContext(), "Sorry, the Notes is read only yet", Toast.LENGTH_SHORT).show();
                 break;

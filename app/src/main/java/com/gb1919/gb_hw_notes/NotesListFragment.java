@@ -57,8 +57,6 @@ public class NotesListFragment extends Fragment {
 //
 
 
-
-
         for (int i = 0; i < list.length; i++) {
             String name = list[i];
             String text = content[i];

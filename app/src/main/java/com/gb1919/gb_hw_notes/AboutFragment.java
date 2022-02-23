@@ -12,7 +12,7 @@ import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ImageView;
+
 
 public class AboutFragment extends Fragment {
 
@@ -28,9 +28,7 @@ public class AboutFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         Button button_back = view.findViewById(R.id.back_button_content);
-        button_back.setOnClickListener((View v) -> {
-            requireActivity().getSupportFragmentManager().popBackStack();
-        });
+        button_back.setOnClickListener((View v) -> requireActivity().getSupportFragmentManager().popBackStack());
         setHasOptionsMenu(true);
 
     }

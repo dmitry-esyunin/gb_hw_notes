@@ -4,7 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-import android.annotation.SuppressLint;
+
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.Menu;
@@ -12,8 +12,7 @@ import android.view.MenuItem;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Note[] note;
-
+//    private Note[] note;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        switch (item.getItemId()){
+        switch (item.getItemId()) {
             case (R.id.action_about):
                 AboutFragment aboutFragment = new AboutFragment();
                 getSupportFragmentManager().beginTransaction().replace(R.id.notes_list, aboutFragment).addToBackStack("ABOUT").commit();
