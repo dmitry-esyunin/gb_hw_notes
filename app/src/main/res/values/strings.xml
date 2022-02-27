@@ -7,4 +7,5 @@
     <string name="close_content_note">Список заметок</string>
     <string name="popup_clear">Очистить</string>
     <string name="popup_exit">exit</string>
+    <string name="close_me">закрыть</string>
 </resources>

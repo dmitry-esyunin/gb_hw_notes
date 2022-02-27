@@ -47,7 +47,10 @@ public class MainActivity extends AppCompatActivity {
             menu.findItem(R.id.action_close_content_note).setVisible(false);
             menu.findItem(R.id.action_exit).setVisible(true);
         }
-
+        if (menu.findItem(R.id.action_close_about) != null) {
+            menu.findItem(R.id.action_close_about).setVisible(false);
+            menu.findItem(R.id.action_exit).setVisible(true);
+        }
         return super.onCreateOptionsMenu(menu);
     }
 
@@ -71,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
     void ShowAlertDialog() {
         new AlertDialog.Builder(this)
                 .setTitle(" ")
-                .setMessage("Закрыть приложение?")
+                .setMessage("Выйти их программы?")
                 .setNeutralButton("Нет", null)
                 .setPositiveButton("Да", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
