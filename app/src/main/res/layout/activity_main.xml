@@ -25,7 +25,13 @@
     <FrameLayout
         android:id="@+id/notes_list"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="0pt"
         android:background="@color/teal_700" />
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/purple_700"/>
 
 </LinearLayout>

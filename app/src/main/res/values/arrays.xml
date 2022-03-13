@@ -37,6 +37,13 @@
         <item>title5</item>
         <item>title6</item>
         <item>title7</item>
+        <item>title8</item>
+        <item>title9</item>
+        <item>title10</item>
+        <item>title11</item>
+        <item>title12</item>
+        <item>title13</item>
+        <item>title14</item>
     </string-array>
 
     <string-array name="descriptions">
@@ -47,17 +54,15 @@
         <item>description5</item>
         <item>description6</item>
         <item>description7</item>
+        <item>description8</item>
+        <item>description9</item>
+        <item>description10</item>
+        <item>description11</item>
+        <item>description12</item>
+        <item>description13</item>
+        <item>description14</item>
     </string-array>
 
-    <array name="pictures">
-        <item>@drawable/nature1</item>
-        <item>@drawable/nature2</item>
-        <item>@drawable/nature3</item>
-        <item>@drawable/nature4</item>
-        <item>@drawable/nature5</item>
-        <item>@drawable/nature6</item>
-        <item>@drawable/nature7</item>
-    </array>
 
 
 </resources>

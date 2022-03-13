@@ -29,17 +29,16 @@ public class AboutFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        Button button_back = view.findViewById(R.id.back_button_content);
-        button_back.setOnClickListener((View v) -> requireActivity().getSupportFragmentManager().popBackStack());
+//        Button button_back = view.findViewById(R.id.back_button_content);
+//        button_back.setOnClickListener((View v) -> requireActivity().getSupportFragmentManager().popBackStack());
         setHasOptionsMenu(true);
 
     }
 
     @Override
     public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
-        menu.findItem(R.id.action_about).setVisible(false);
+
         menu.findItem(R.id.action_exit).setVisible(false);
-        inflater.inflate(R.menu.menu_about, menu);
         super.onCreateOptionsMenu(menu, inflater);
 
     }

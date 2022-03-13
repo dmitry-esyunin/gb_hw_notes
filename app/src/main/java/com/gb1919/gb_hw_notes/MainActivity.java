@@ -58,10 +58,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
-            case (R.id.action_about):
-                AboutFragment aboutFragment = new AboutFragment();
-                getSupportFragmentManager().beginTransaction().replace(R.id.notes_list, aboutFragment).addToBackStack("ABOUT").commit();
-                break;
             case (R.id.action_exit):
                 ShowAlertDialog();
                 break;
@@ -74,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
     void ShowAlertDialog() {
         new AlertDialog.Builder(this)
                 .setTitle(" ")
-                .setMessage("Выйти их программы?")
+                .setMessage("Выйти из программы?")
                 .setNeutralButton("Нет", null)
                 .setPositiveButton("Да", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {

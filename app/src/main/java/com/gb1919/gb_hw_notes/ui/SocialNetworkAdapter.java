@@ -57,30 +57,19 @@ public class SocialNetworkAdapter extends RecyclerView.Adapter<SocialNetworkAdap
     class MyViewHolder extends RecyclerView.ViewHolder{
         private TextView textViewTitle;
         private TextView textViewDescription;
-        private ImageView imageView;
-        private ToggleButton like;
+
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             textViewTitle = (TextView) itemView.findViewById(R.id.title);
             textViewDescription = (TextView) itemView.findViewById(R.id.description);
-            imageView = (ImageView) itemView.findViewById(R.id.imageView);
-            like = (ToggleButton) itemView.findViewById(R.id.like);
-            /*textView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    if(onItemClickListener!=null){
-                        onItemClickListener.onItemClick(getLayoutPosition());
-                    }
-                }
-            });*/
+
         }
             // связываем контент с макетом
         public void bindContentWithLayout(CardData content){
 
             textViewTitle.setText(content.getTitle());
             textViewDescription.setText(content.getDescription());
-            imageView.setImageResource(content.getPicture());
-            like.setChecked(content.isLike());
+
         }
 
     }

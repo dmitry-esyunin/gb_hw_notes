@@ -22,10 +22,10 @@ public class LocalRepositoryImpl implements CardSource {
     public LocalRepositoryImpl init() {
         String[] titles = resources.getStringArray(R.array.titles);
         String[] descriptions = resources.getStringArray(R.array.descriptions);
-        TypedArray pictures = resources.obtainTypedArray(R.array.pictures);
+
 
         for (int i = 0; i < titles.length; i++) {
-            dataSource.add(new CardData(titles[i], descriptions[i], pictures.getResourceId(i, 0), false));
+            dataSource.add(new CardData(titles[i], descriptions[i]));
         }
         return this;
     }

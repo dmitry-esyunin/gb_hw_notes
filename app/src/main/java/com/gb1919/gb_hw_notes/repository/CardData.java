@@ -3,14 +3,12 @@ package com.gb1919.gb_hw_notes.repository;
 public class CardData {
     private String title;
     private String description;
-    private int picture;
-    private boolean like;
 
-    public CardData(String title, String description, int picture, boolean like) {
+
+    public CardData(String title, String description) {
         this.title = title;
         this.description = description;
-        this.picture = picture;
-        this.like = like;
+
     }
 
     public String getTitle() {
@@ -21,15 +19,5 @@ public class CardData {
         return description;
     }
 
-    public int getPicture() {
-        return picture;
-    }
 
-    public boolean isLike() {
-        return like;
-    }
-
-    public void setLike(boolean like) {
-        this.like = like;
-    }
 }
